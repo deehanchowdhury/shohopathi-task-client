@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LMS</title>
+</head>
+
+<body>
+    
+    <h1>User Portal</h1>
+    <h2>Search Books</h2>
+
+    <table>
+		<tr>
+			
+			<th>Book Name</th>
+			<th>Book Author</th>
+			<th>Book Genre</th>
+			<th>Read</th>
+
+		</tr>
+		<% data.forEach(element=> { %>
+			<tr>
+
+				<td>
+					<%= element.BookName %>
+				</td>
+				<td>
+					<%= element.Author %>
+				</td>
+				<td>
+					<%= element.Genre %>
+				</td>
+				<td>
+					 <!-- <form action="/read" method="post">
+						<input type="text" style="display: none;"
+							name="_id"
+							value="<%= element._id %>">
+						<button type="submit">Read</button>
+					</form> -->
+					<a href=<%= element.pdf %> class="btn btn-primary" role="button">Link</a>
+				</td>
+			</tr>
+			<% }) %>
+	</table>
+
+</body>
+
+</html>

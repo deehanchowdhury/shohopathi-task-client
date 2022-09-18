@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LMS</title>
+</head>
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,
+	th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+<body>
+	<h1>User Portal</h1>
+
+	<h2>Search History:</h2>
+    
+    <table>
+		<tr>
+			
+			<th>BookName</th>
+            <th>Link</th>
+
+		</tr>
+
+		<% data.forEach(element=> { %>
+			<tr>
+				
+
+				<td>
+					<%= element.BookName %>
+				</td>
+                <td>
+					<a href=<%= element.pdf %> class="btn btn-primary" role="button">Read Book</a>
+				</td>
+				
+				
+				
+			</tr>
+			<% }) %>
+	</table>
+
+	
+</body>
+
+</html>

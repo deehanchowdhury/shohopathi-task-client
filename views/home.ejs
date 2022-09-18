@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LMS</title>
+</head>
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,
+	th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+<body>
+	<h1>User Portal</h1>
+
+	<h2>Search Book, Author, Genre</h2>
+
+	<form action="/view-search-history" method="post">
+		<input type="text" style="display: none;"
+		name="user"
+		value= "<%= data_two._id %>" >
+
+		<button type="submit">Search History</button>
+	</form>
+
+	<form action="/search-by-name" method="post">
+		<input type="text" placeholder="Book Name"
+			name="BookName">
+			
+		<input type="text" style="display: none;"
+		name="userid"
+		value= "<%= data_two._id %>">
+
+		<button type="submit">Search by Name</button>
+	</form>
+
+	<form action="/search-by-author" method="post">
+		<input type="text" placeholder="Author"
+			name="Author">
+		<input type="text" style="display: none;"
+		name="userid"
+		value= "<%= data_two._id %>">
+
+		<button type="submit">Search by Auhtor</button>
+	</form>
+
+	<form action="/search-by-genre" method="post">
+		<input type="text" placeholder="Genre"
+			name="Genre">
+		<input type="text" style="display: none;"
+		name="userid"
+		value= "<%= data_two._id %>">
+		<button type="submit">Search by Genre</button>
+	</form>
+
+	<h2>All Books</h2>
+	<h2><%= data_two.username %></h2>
+	<table>
+		<tr>
+			
+			<th>Book Name</th>
+			<th>Book Author</th>
+			<th>Book Genre</th>
+			<th>Read</th>
+
+		</tr>
+		<% data_one.forEach(element=> { %>
+			<tr>
+				
+
+				<td>
+					<%= element.BookName %>
+				</td>
+				<td>
+					<%= element.Author %>
+				</td>
+				<td>
+					<%= element.Genre %>
+				</td>
+				<td>
+					<a href=<%= element.pdf %> class="btn btn-primary" role="button">Read Book</a>
+					 <!-- <form action="/read" method="post">
+						<input type="text" style="display: none;"
+							name="_id"
+							value="<%= element._id %>">
+						<button type="submit">Read</button>
+					</form> -->
+				</td>
+			</tr>
+			<% }) %>
+	</table>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LMS</title>
+</head>
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td,
+	th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+<body>
+	<h1>User Portal</h1>
+
+	<h2>User Authentication required:</h2>
+    <h3>Log In</h3>
+	<form action="/log-in" method="post">
+		<input type="text" placeholder="Email"
+			name="username">
+        <input type="text" placeholder="Password"
+        name="password">
+		<button type="submit">Log In</button>
+	</form>
+
+	<h3>Or, Sign up</h3>
+	<form action="/sign-up" method="post">
+		<input type="text" placeholder="Email"
+			name="username">
+        <input type="text" placeholder="Password"
+        name="password">
+		<button type="submit">Sign Up</button>
+	</form>
+
+	
+</body>
+
+</html>
